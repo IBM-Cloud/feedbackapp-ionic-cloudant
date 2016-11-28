@@ -1,7 +1,9 @@
 # Ionic-Cloudant-FeedbackApp 
 An Ionic feedback app using Cloudant NoSQL service on IBM Bluemix. An esay to deploy mobile app for receiving feedback at Meetups, Events etc.,
 
-Cloudant is the distributed database as a service (DBaaS) built from the ground up to deliver fast-growing application data to the edge.
+**Ionic** is a complete open-source SDK for hybrid mobile app development. Built on top of AngularJS and Apache Cordova, Ionic provides tools and services for developing hybrid mobile apps using Web technologies like CSS, HTML5, and Sass.
+
+**Cloudant** is the distributed database as a service (DBaaS) built from the ground up to deliver fast-growing application data to the edge.
 
 The App Runs on iOS and Android and build using **Ionic Version 1.7.13**
 
@@ -64,8 +66,15 @@ angular.module('app').constant('CLOUDANTDB_CONFIG', {
     password: '<password>'
 });
 ```
+* DBName - Name of the Cloudant NoSQL DB your created on Dashboard 2.0.
 * For **hostname,username and password** - Navigate to the Cloudant Service page on Bluemix and Click on **Service Credentials** tab. 
 * Click on **View Credentials** under Actions.
+
+|   placeholder	|   Cloudant Service|
+|---	|---	|
+|  username 	|  username 	|
+|  password 	|  password 	|
+|  hostname  |  host      |
   
 The CLOUDANTDB_CONFIG constant values are utilised in **controllers.js**
 
