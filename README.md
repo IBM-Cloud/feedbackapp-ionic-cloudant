@@ -1,7 +1,9 @@
 # Ionic-Cloudant-FeedbackApp 
 An Ionic feedback app using Cloudant NoSQL service on IBM Bluemix. An esay to deploy mobile app for receiving feedback at Meetups, Events etc.,
 
-Runs on iOS and Android | Ionic Version 1.7.13
+Cloudant is the distributed database as a service (DBaaS) built from the ground up to deliver fast-growing application data to the edge.
+
+The App Runs on iOS and Android and build using **Ionic Version 1.7.13**
 
 <strong>iOS:</strong>
 <p align="center">
@@ -33,3 +35,64 @@ Runs on iOS and Android | Ionic Version 1.7.13
 5. Enter a unique descriptive name in the Service name field.
 6. Check Features, Images and Pricing Plans.
 7. Click the **Create** button.
+
+### Cloudant Dashboard 2.0
+Once the Cloudant service is created, 
+
+* Click on ***LAUNCH*** button to launch the Cloudant Dashboard 2.0 (Powerful querying, analytics, replication, and syncing happens here) on a seperate tab 
+* Create a new database by clicking on **Create Database** on the top ribbon. Your database is created.
+* From the left Pane, Click on **Account** -> CORS Tab -> Check **All domains ( * )**. *Not recommended for all usecases, this being a simple mobile app taking this liberty. [CORS Documentation](https://docs.cloudant.com/cors.html)
+
+## Configuring Ionic app with a configuration file
+
+* Install Ionic 
+```
+npm install -g cordova ionic
+```
+* Clone the repo 
+```
+$ git clone https://github.com/VidyasagarMSC/Ionic-Cloudant-FeedbackApp.git
+```
+* Open the unzipped folder in an IDE (I use Brackets) of your Choice and Navigate to **www/js** folder.
+* Create a new Javascript file **app.config** *With extension the file will be app.config.js*
+* Paste the below code in app.config.js,
+```
+angular.module('app').constant('CLOUDANTDB_CONFIG', {
+    baseUrl: 'https://<hostname>',
+    dbName: '<DBName>',
+    userName: '<username>',
+    password: '<password>'
+});
+```
+* For **hostname,username and password** - Navigate to the Cloudant Service page on Bluemix and Click on **Service Credentials** tab. 
+* Click on **View Credentials** under Actions.
+  
+The CLOUDANTDB_CONFIG constant values are utilised in **controllers.js**
+
+```
+// Define the Credentials string to be encoded.
+    var credentialstobeEncoded = CLOUDANTDB_CONFIG.userName + ":" + CLOUDANTDB_CONFIG.password;
+
+    // Encode the String
+    var encodedString = Base64.encode(credentialstobeEncoded);
+    console.log("ENCODED: " + encodedString);
+
+    $scope.createFeedback = function (feedback) {
+
+        $http({
+            method: 'POST',
+            url: CLOUDANTDB_CONFIG.baseUrl + "/" + CLOUDANTDB_CONFIG.dbName,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic ' + encodedString
+            },
+```
+## Customize the App UI
+
+* Images can be replaced with the same name under **img** folder.
+* Customize the feedback fields in **feedback.html**
+* There are validations on the fields based on the type. E.g., Email checks for @ in the entry. **Submit** will be disabled until the form is completely valid.
+
+*Notes*: 
+* This sample uses only the POST HTTP API call of Cloudant Service. To understand other HTTP API Verbs, Refer [Cloudant Documentation](https://docs.cloudant.com/basics.html#http-api)
+* [Cloudant Client Libraries](https://docs.cloudant.com/libraries.html) 
