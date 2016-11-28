@@ -1,0 +1,59 @@
+<ion-view title="Feedback" id="page1" class=" ">
+    <ion-content padding="true" class=" manual-remove-top-padding has-header">
+        <div class="" style="margin-left: -10px; width: calc(100% + 20px);">
+            <img src="img/MainHeader.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div class="" style="margin-left: -10px; width: calc(100% + 20px);">
+            <img src="img/SubHeader.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <form id="feedbackForm" class="list " name="$parent.feedbackForm" ng-submit="createFeedback(feedback)">
+            <label class="item item-input item-floating-label " id="feedback-input1">
+                <span class="input-label">Name</span>
+                <input type="text" placeholder="Name*" ng-model="$parent.feedback.name" required>
+            </label>
+            <label class="item item-input item-floating-label " id="feedback-input2">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="Email*" ng-model="$parent.feedback.email">
+            </label>
+            <label class="item item-input item-floating-label " id="feedback-input6">
+                <span class="input-label">Organization</span>
+                <input type="text" placeholder="Organization" ng-model="$parent.feedback.org">
+            </label>
+            <label class="item item-input item-floating-label " id="feedback-input5">
+                <span class="input-label">Phone</span>
+                <input type="tel" placeholder="Phone" ng-model="$parent.feedback.phone">
+            </label>
+            <label class="item item-select " id="feedback-select2">
+                <span class="input-label">Lab</span>
+                <select ng-model="$parent.feedback.lab">
+                    <option value="" selected>--Select a lab--</option>
+                    <option>Cloud</option>
+                    <option>Mobile</option>
+                    <option>IoT</option>
+                    <option>Watson</option>
+                    <option>BlockChain</option>
+                </select>
+            </label>
+            <!--<label class="item item-input " id="feedback-textarea2">
+                <span class="input-label">Rating</span>
+
+                <!-- <textarea placeholder="" ng-model="feedback.rating">
+
+                </textarea>-->
+            <div class="spacer" style="width: 300px; height: 22px;"></div>
+            <p id="feedback-markdown2" style="color:#000000;" class=" ">
+                <strong>Rating</strong>
+            </p>
+            <rating ng-model="$parent.feedback.rating" max="rating.max"></rating>
+            <div class="spacer" style="width: 300px; height: 22px;"></div>
+            <p id="feedback-markdown2" style="color:#000000;" class=" ">
+                <strong>Your Comments</strong>
+            </p>
+            <label class="item item-input " id="feedback-textarea3">
+                <!--<span class="input-label"></span>-->
+                <textarea placeholder="" ng-model="$parent.feedback.comments"></textarea>
+            </label>
+            <button id="feedback-button1" class=" button button-calm  button-block " ng-click="showAlert()" ng-disabled="!feedbackForm.$dirty || feedbackForm.$invalid">Submit</button>
+        </form>
+    </ion-content>
+</ion-view>

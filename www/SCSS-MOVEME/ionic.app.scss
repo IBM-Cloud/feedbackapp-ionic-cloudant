@@ -1,0 +1,24 @@
+$calm: #11c1f3;
+$link-color: $calm;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+body.platform-ios {
+	font-family: Montserrat, sans-serif;
+}
+
+.ionic-body.platform-ios {
+	font-family: Montserrat, sans-serif;
+}
+
+body.platform-android {
+	font-family: Roboto, sans-serif;
+}
+
+.ionic-body.platform-android {
+	font-family: Roboto, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.tab-item,input,button,select,textarea {
+	font-family: inherit;
+}
+
