@@ -1,5 +1,5 @@
 # Ionic-Cloudant-FeedbackApp 
-An Ionic feedback app using Cloudant NoSQL service on IBM Bluemix. An esay to deploy mobile app for receiving feedback at Meetups, Events etc.,
+An Ionic feedback app using Cloudant NoSQL service on IBM Bluemix. An easy to configure mobile app for receiving feedback at Meetups, Events etc.,
 
 **Ionic** is a complete open-source SDK for hybrid mobile app development. Built on top of AngularJS and Apache Cordova, Ionic provides tools and services for developing hybrid mobile apps using Web technologies like CSS, HTML5, and Sass.
 
