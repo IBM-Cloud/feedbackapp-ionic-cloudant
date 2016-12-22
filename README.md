@@ -25,7 +25,7 @@ The App Runs on iOS and Android and build using **Ionic Version 1.7.13**
 
 <ul>
 <li>Don’t have Bluemix account? <a target="_blank" href="https://console.ng.bluemix.net/registration/?target=/catalog/services/conversation/" title="(Opens in a new tab or window)">Sign up</a> to create a free trial account.</li>
-<li>Have a Bluemix account? Use <a target="_blank" href="https://console.ng.bluemix.net/catalog/services/conversation" title="(Opens in a new tab or window)">this link</a>.</li>
+<li>Have a Bluemix account? Use <a target="_blank" href="https://console.ng.bluemix.net/catalog/services/cloudant-nosql-db" title="(Opens in a new tab or window)">this link</a>.</li>
 </ul>
 
  Add a new Cloudant data service in just a few clicks:
@@ -49,11 +49,11 @@ Once the Cloudant service is created,
 
 * Install Ionic 
 ```
-npm install -g cordova ionic
+npm install -g cordova ionic@1.7.13
 ```
 * Clone the repo 
 ```
-$ git clone https://github.com/VidyasagarMSC/Ionic-Cloudant-FeedbackApp.git
+$ git clone https://github.com/IBM-Bluemix/feedbackapp-ionic-cloudant.git
 ```
 * Open the unzipped folder in an IDE (I use Brackets) of your Choice and Navigate to **www/js** folder.
 * Create a new Javascript file **app.config** *With extension the file will be app.config.js*
@@ -114,6 +114,7 @@ On an iOS Simulator or Android Emulator
 $ ionic emulate ios
 $ ionic emulate android
 ```
+<strong>Note: </strong>Follow the <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android">Android</a> and <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios">iOS</a> platform guides to install required tools for development.
 
 *Notes*: 
 * This sample uses only the POST HTTP API call of Cloudant Service. To understand other HTTP API Verbs, Refer [Cloudant Documentation](https://docs.cloudant.com/basics.html#http-api)
