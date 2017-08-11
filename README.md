@@ -115,7 +115,51 @@ $ ionic emulate ios
 $ ionic emulate android
 ```
 <strong>Note: </strong>Follow the <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android">Android</a> and <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios">iOS</a> platform guides to install required tools for development.
+<h3>If you see this Error</h3>
+<pre>Error: Cannot find module 'internal/fs'
 
+at Function.Module._resolveFilename (module.js:470:15)
+
+at Function.Module._load (module.js:418:25)
+
+at Module.require (module.js:498:17)
+
+at require (internal/module.js:20:19)
+
+at evalmachine.&lt;anonymous&gt;:18:20
+
+at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/ionic/node_modules/ionic-app-lib/node_modules/vinyl-fs/node_modules/graceful-fs/fs.js:11:1)
+
+at Module._compile (module.js:571:32)
+
+at Object.Module._extensions..js (module.js:580:10)
+
+at Module.load (module.js:488:32)
+
+at tryModuleLoad (module.js:447:12)
+
+Cannot find module 'internal/fs' (CLI v1.7.13)</pre>
+<h3>Resolution:</h3>
+<ul>
+ 	<li>Check Node version on your system</li>
+</ul>
+<pre class="">node -v</pre>
+<ul>
+ 	<li>If you see <strong>&nbsp;v7.5.0</strong>, run the below commands one after another to add <strong>v6</strong></li>
+</ul>
+<pre class="">export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm install 6</pre>
+<h3>If you see this error</h3>
+<div class="extra-info-wrapper">
+<div class="extra-info two-rows">
+<div class="title-wrapper">
+<pre class="">Error: Cannot read property ‘replace’ of undefined</pre>
+</div>
+</div>
+</div>
+<h3>Solution:</h3>
+<pre class="">sudo npm install ios-sim@latest</pre>
 *Notes*: 
 * This sample uses only the POST HTTP API call of Cloudant Service. To understand other HTTP API Verbs, Refer [Cloudant Documentation](https://docs.cloudant.com/basics.html#http-api)
 * [Cloudant Client Libraries](https://docs.cloudant.com/libraries.html) 
