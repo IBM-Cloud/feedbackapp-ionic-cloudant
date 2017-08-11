@@ -160,6 +160,7 @@ nvm install 6</pre>
 </div>
 <h3>Solution:</h3>
 <pre class="">sudo npm install ios-sim@latest</pre>
+
 *Notes*: 
 * This sample uses only the POST HTTP API call of Cloudant Service. To understand other HTTP API Verbs, Refer [Cloudant Documentation](https://docs.cloudant.com/basics.html#http-api)
 * [Cloudant Client Libraries](https://docs.cloudant.com/libraries.html) 
